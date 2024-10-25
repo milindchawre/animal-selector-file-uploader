@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Selector and File Uploader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div>
+                <h2>Select an Animal</h2>
+                <form id="animalForm">
+                    <label><input type="radio" name="animal" value="cat"> Cat</label>
+                    <label><input type="radio" name="animal" value="dog"> Dog</label>
+                    <label><input type="radio" name="animal" value="elephant"> Elephant</label>
+                    <!-- Removed the Show Image button -->
+                </form>
+            </div>
+            <div id="imageContainer"></div>
+        </div>
+        <div class="box">
+            <div>
+                <h2>Upload a File</h2>
+                <form id="fileForm" enctype="multipart/form-data">
+                    <input type="file" name="file" id="fileInput">
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+            <div id="fileInfo"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
